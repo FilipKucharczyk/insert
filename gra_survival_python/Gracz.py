@@ -1,5 +1,5 @@
 import pygame
-from insert.gra_survival_python.ustawienia import *
+from ustawienia import *
 
 class Gracz:
     def __init__(self, x, y):
@@ -22,4 +22,6 @@ class Gracz:
         
         if self.rect.left < 0 :
             self.rect.x = 0
+    
+
             

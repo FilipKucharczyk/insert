@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zadania z CSS - Przewodnik</title>
+</head>
+<body style="background-color: black; color: white;">
+    <h1>ZADANIA CSS: KROK PO KROKU</h1>
+    
+    <p><a href="https://how2html.pl/css-podstawy/">TWÓJ ŚWIĘTY GRAAL (czytaj to, bo inaczej zadasz mi głupie pytanie)</a></p>
+
+    <div>
+        <h2>1. Zrozum zasady gry (Własność i Wartość)</h2>
+        Na samej górze poradnika piszą, że CSS składa się z własności (np. <code>background-color</code>) i wartości (np. <code>blue</code>). 
+        Pamiętaj: między nimi ma być <strong>DWUKROPEK</strong>, a na końcu <strong>ŚREDNIK</strong>. Jak zapomnisz średnika, strona wybuchnie. (Żartuję, ale nie zadziała).
+
+        <h2>2. Zdobądź władzę nad Selektorami</h2>
+        Dowiedziałeś się z linku, że są selektory elementów (np. <code>p</code>), identyfikatory (z hashem <code>#</code>) i klasy (z kropką <code>.</code>).
+        Stwórz w HTML-u trzy paragrafy. Jednemu daj <code>id="szef"</code>, drugiemu <code>class="zwyklak"</code>, a trzeciemu też <code>class="zwyklak"</code>. Na razie nic nie koloruj!
+
+        <h2>3. Styl liniowy - zrób to źle (tylko ten jeden raz!)</h2>
+        Poradnik uczy o atrybucie <code>style=""</code> wciskanym prosto w kod. Dodaj go bezpośrednio do jednego z Twoich paragrafów i zrób mu żółte tło (<code>background-color: yellow;</code>). 
+        Widzisz, jaki robi się bałagan w kodzie HTML? No to czas to naprawić...
+
+        <h2>4. Przejdź na wyższy poziom: tag &lt;style&gt;</h2>
+        Skasuj ten brzydki styl liniowy z Punktu 3! Zamiast tego, w sekcji <code>&lt;head&gt;</code> na samej górze dokumentu dodaj tag <code>&lt;style&gt;</code>.
+        Użyj w nim selektorów z Zadania 2, żeby pokolorować swojego "#szef" na niebiesko, a oba ".zwyklak" na zielono.
+
+        <h2>5. Ostatnie starcie: Zewnętrzny plik (jak prawdziwy PRO)</h2>
+        Na końcu strony piszą jasno: trzymanie CSS w HTML-u to w ostateczności amatorszczyzna. 
+        Stwórz zupełnie nowy plik o nazwie <code>main.css</code>. Wytnij cały kod CSS, który masz w tagu <code>&lt;style&gt;</code> i wklej do tego nowego pliku.
+
+        <h2>6. Magiczny &lt;link&gt;</h2>
+        Żeby twój nowy plik zadziałał, musisz go połączyć ze stroną HTML. 
+        Znajdź na stronie informację o tagu <code>&lt;link&gt;</code> i dodaj go do swojego <code>&lt;head&gt;</code>. 
+        Jeśli po odświeżeniu strony kolory wróciły – WYGRAŁEŚ! Jeśli nie... <br>
+        <a style="font-size: 25px;">POWRÓT DO PUNKTU 1 I CZYTAJ LINK JESZCZE RAZ.</a>
+
+        <br><br>
+        <hr style="border-color: red;">
+        <br>
+
+        <h1 style="color: red;">ZADANIA DLA CHĘTNYCH</h1>
+        <p>Zrobiłeś wszystko? Nudzisz się? No to udowodnij, że potrafisz użyć Google.</p>
+
+        <h2>7. Magiczny dotyk myszki (Hover)</h2>
+        Zrób tak, żeby po najechaniu myszką na element (np. na Twój paragraf <code>#szef</code>), zmieniał on kolor tła na jakiś inny! 
+        Podpowiedź do wpisania w Google: <strong>CSS hover</strong>.
+
+        <h2>8. Kanciaste jest nudne</h2>
+        Jeśli dodałeś do strony jakiś obrazek, pewnie ma ostre, nudne rogi. Zaokrąglij je! A jeśli jesteś kozakiem, zrób z tego obrazka idealne kółko.
+        Podpowiedź do wpisania w Google: <strong>CSS border-radius</strong>.
+
+        <h2>9. Rzuć na to cień</h2>
+        Płaskie litery na ekranie to przeżytek. Dodaj do głównego nagłówka cień, żeby wyglądał jak 3D.Podpowiedź
+        <a href="https://how2html.pl/formatowanie-tekstu-css/" style="color: yellow;">kliknij tutaj.</a>
+    </div>
+</body>
+</html>

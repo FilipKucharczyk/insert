@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Wyzwanie JS - Zostań Szefem Kodu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #e94560;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        .task-box {
+            background-color: #16213e;
+            border-left: 5px solid #43d8c9;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .task-box h2 {
+            color: #43d8c9;
+            margin-top: 0;
+            border-bottom: 1px solid #43d8c9;
+            padding-bottom: 10px;
+        }
+        .hint-link {
+            color: #f9a826;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .hint-link:hover {
+            text-decoration: underline;
+            color: white;
+        }
+        
+        #top {
+            display: none; 
+            position: fixed;
+            bottom: 20px;
+            right: 30px;
+            font-size: 18px;
+            background-color: #e94560;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            border: none;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        #top:hover {
+            background-color: #ff5773;
+        }
+
+        .carousel-container {
+            text-align: center;
+            background-color: #0f3460;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slide {
+            display: none; 
+            max-width: 100%;
+            max-height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+        }
+
+        .comment-section {
+            background-color: #0f3460;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #1a1a2e;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        button.action-btn {
+            background-color: #43d8c9;
+            color: #1a1a2e;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        button.action-btn:hover {
+            background-color: #34b3a5;
+        }
+        #commentslist {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #1a1a2e;
+            border-radius: 4px;
+            min-height: 50px;
+        }
+        #commentslist p {
+            background-color: #16213e;
+            padding: 10px;
+            border-left: 3px solid #e94560;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Praktyczny Trening JavaScript</h1>
+        <p>Nie dotykaj tego pliku HTML! Twoim zadaniem jest stworzyć plik <strong>js/script.js</strong> i wprawić tę stronę w ruch.</p>
+    </header>
+
+    <main>
+        <div class="task-box">
+            <h2>Zadanie 1: Magiczna Winda (Scroll)</h2>
+            <p><strong>Cel:</strong> Spraw, aby przycisk w prawym dolnym rogu pojawiał się tylko wtedy, gdy zjedziesz stroną w dół.</p>
+            <ul>
+                <li>Na samym dole tego kodu HTML jest przycisk oznaczony jako <code>id="top"</code>.</li>
+                <li>Napisz funkcję przypiętą do <code>window.onscroll</code>. Jeśli <code>document.documentElement.scrollTop</code> jest większe niż 20, zmień styl przycisku na <code>display = "block"</code>. W przeciwnym razie zmień na <code>"none"</code>.</li>
+                <li>Napisz funkcję <code>backUp()</code>, która używa <code>window.scrollTo</code> do płynnego powrotu na górę. Ten przycisk ma już atrybut <code>onclick="backUp()"</code>!</li>
+            </ul>
+            <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/scrollTo" target="_blank" class="hint-link">POMOC: Funkcja scrollTo</a>
+        </div>
+
+        <div class="task-box">
+            <h2>Zadanie 2: Zakręcona Karuzela</h2>
+            <p><strong>Cel:</strong> Poniższe obrazki mają ukrytą klasę <code>slide</code> (dlatego teraz ich nie widzisz). Spraw, by zmieniały się same co 2 sekundy.</p>
+            <ul>
+                <li>Złap wszystkie obrazki używając <code>document.getElementsByClassName("slide")</code>.</li>
+                <li>Napisz funkcję <code>carousel()</code>, która za pomocą pętli ukryje wszystkie obrazki.</li>
+                <li>Ustaw odpowiedni indeks i pokaż tylko jeden obrazek na raz (<code>display = "inline-block"</code>).</li>
+                <li>Na końcu funkcji użyj <code>setTimeout(carousel, 2000)</code>, aby funkcja wywoływała samą siebie!</li>
+            </ul>
+            <a href="https://kursjs.pl/kurs/super-podstawy/petle" target="_blank" class="hint-link">POMOC: Jak działają pętle?</a>
+            
+            <div class="carousel-container">
+                <img class="slide" src="https://picsum.photos/id/1015/600/300" alt="Widok 1">
+                <img class="slide" src="https://picsum.photos/id/1016/600/300" alt="Widok 2">
+                <img class="slide" src="https://picsum.photos/id/1018/600/300" alt="Widok 3">
+                <p style="color: #555; position: absolute; z-index: -1;">Tutaj pojawi się karuzela, gdy napiszesz JS!</p>
+            </div>
+        </div>
+
+        <div class="task-box">
+            <h2>Zadanie 3 i 4: System Komentarzy (LocalStorage)</h2>
+            <p><strong>Cel:</strong> Ożyw poniższy formularz. Komentarze mają się zapisywać w pamięci przeglądarki i wyświetlać pod spodem.</p>
+            <ul>
+                <li>Napisz funkcję <code>saveComment()</code>. Pobierz wartości z <code>id="namebox"</code> oraz <code>id="txt1"</code>.</li>
+                <li>Zapisz je do tablicy i wyślij do <code>window.localStorage</code> używając <code>JSON.stringify</code>.</li>
+                <li>Napisz funkcję <code>bindCmt()</code>, która pobierze te dane (przez <code>JSON.parse</code>), stworzy nowe paragrafy przez <code>document.createElement("p")</code> i wrzuci je do kontenera <code>id="commentslist"</code>.</li>
+                <li>Napisz funkcję <code>clearComment()</code>, która użyje <code>localStorage.clear()</code> i odświeży widok.</li>
+            </ul>
+            <a href="https://kursjs.pl/kurs/storage/storage.php" target="_blank" class="hint-link">POMOC: Jak działa LocalStorage?</a>
+
+            <div class="comment-section">
+                <input type="text" id="namebox" placeholder="Twój Nick">
+                <textarea id="txt1" rows="3" placeholder="Wpisz swój komentarz..."></textarea>
+                
+                <div>
+                    <button class="action-btn" onclick="saveComment()">Zapisz komentarz</button>
+                    <button class="action-btn" style="background-color: #e94560; color: white;" onclick="clearComment()">Wyczyść pamięć</button>
+                </div>
+
+                <h3 style="margin-top: 30px; border-bottom: 1px solid #555; padding-bottom: 10px;">Lista komentarzy:</h3>
+                <div id="commentslist">
+                    Brak komentarzy (lub Twój JS jeszcze nie działa!)
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <button onclick="backUp()" id="top" title="Wróć na górę">⬆️ TOP</button>
+
+    <script type="text/javascript" src="rozwiazania.js"></script>
+
+</body>
+</html>

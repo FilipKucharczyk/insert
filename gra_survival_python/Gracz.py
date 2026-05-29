@@ -20,8 +20,14 @@ class Gracz:
         elif(strona == 'D'):
             self.rect.y += self.predkosc
         
-        if self.rect.left < 0 :
+        if self.rect.left < 0:
             self.rect.x = 0
-    
+        if self.rect.right > SZEROKOSC:
+            self.rect.x = SZEROKOSC - ROZMIAR
+        if self.rect.top < 0:
+            self.rect.y = 0
+        if self.rect.bottom > WYSOKOSC:
+            self.rect.y = WYSOKOSC - ROZMIAR
+        
 
             

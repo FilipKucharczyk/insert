@@ -5,7 +5,9 @@ def utworz_wyswietlacz():
     pygame.display.set_caption("Arena Survival")
     return screen
 
-def narysuj_gracza(screen, gracz):
+def narysuj(screen, gracz, lista_wrogow):
     screen.fill(CIEMNOSZARY)
     gracz.rysuj(screen)
+    for wrog in lista_wrogow:
+        wrog.rysuj(screen) 
     pygame.display.flip()

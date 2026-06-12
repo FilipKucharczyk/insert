@@ -1,5 +1,6 @@
 import pygame
 from Gracz import *
+from Wrog import * # Importujemy nową klasę
 from ustawienia import *
 from wyswietlacz import *
 from Wrog import *
@@ -15,8 +16,9 @@ pygame.time.set_timer(Spawn_Wroga, 5000)
 running = True
 
 while running:
+    # --- ZDARZENIA ---
     for event in pygame.event.get():
-        if(event.type == pygame.QUIT):
+        if event.type == pygame.QUIT:
             running = False
         if event.type == Spawn_Wroga:
             lista_wrogow.append(Wrog())
@@ -31,6 +33,8 @@ while running:
     if keys[pygame.K_DOWN]:
         Moj_gracz.rusz('D')
     
+    for wrog in lista_wrogow:
+        wrog.gon_gracza(Moj_gracz.rect)
     
     narysuj(screen, Moj_gracz, lista_wrogow)
     clock.tick(FPS)

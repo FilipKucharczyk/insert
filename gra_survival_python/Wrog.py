@@ -24,4 +24,14 @@ class Wrog:
             self.rect.y -= self.predkosc
         
         
-    
+    def gon_gracza(self, gracz_rect):
+        # Namierzanie gracza
+        if self.rect.x < gracz_rect.x:
+            self.rect.x += self.predkosc
+        elif self.rect.x > gracz_rect.x:
+            self.rect.x -= self.predkosc
+            
+        if self.rect.y < gracz_rect.y:
+            self.rect.y += self.predkosc
+        elif self.rect.y > gracz_rect.y:
+            self.rect.y -= self.predkosc

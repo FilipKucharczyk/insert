@@ -1,5 +1,6 @@
 import pygame
 from Gracz import *
+from Wrog import * # Importujemy nową klasę
 from ustawienia import *
 from wyswietlacz import *
 from Wrog import *
@@ -23,8 +24,9 @@ czy_strzal = True
 running = True
 
 while running:
+    # --- ZDARZENIA ---
     for event in pygame.event.get():
-        if(event.type == pygame.QUIT):
+        if event.type == pygame.QUIT:
             running = False
         if event.type == Spawn_Wroga:
             lista_wrogow.append(Wrog())
@@ -62,6 +64,6 @@ while running:
     for pocisk in lista_pociskow:
         pocisk.rusz()
     
-    narysuj(screen, Moj_gracz, lista_wrogow, lista_pociskow)
+    narysuj_gre(screen, Moj_gracz, lista_wrogow, lista_pociskow)
     clock.tick(FPS)
     

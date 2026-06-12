@@ -12,5 +12,16 @@ class Wrog:
     
     def rysuj(self, screen):
         pygame.draw.rect(screen, self.color, self.rect)
+    
+    def gon(self, gracz_rectangle):
+        if self.rect.x < gracz_rectangle.x:
+            self.rect.x += self.predkosc
+        if self.rect.x > gracz_rectangle.x:
+            self.rect.x -= self.predkosc
+        if self.rect.y < gracz_rectangle.y:
+            self.rect.y += self.predkosc
+        if self.rect.y > gracz_rectangle.y:
+            self.rect.y -= self.predkosc
+        
         
     
